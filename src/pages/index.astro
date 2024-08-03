@@ -4,6 +4,8 @@ import Countdown from '@components/Countdown';
 import Pricing from '@components/Pricing';
 import SectionHeading from '@components/SectionHeading.astro';
 import Features from '@components/Features';
+import Image from 'astro/components/Image.astro';
+import HeroImage from '../assets/hero-3.webp';
 
 const endDate = new Date('2024-08-08T23:59:59');
 ---
@@ -46,7 +48,7 @@ const endDate = new Date('2024-08-08T23:59:59');
         </div>
         <div class='relative sm:w-4/12 max-sm:w-full'>
           <div class='ball '></div>
-          <img class='w-[160px] h-full hero-img ' src='/hero-3.webp' alt='Clube Bang'  />
+          <Image class='hero-img' width='160' height='350' src={HeroImage} alt='Clube Bang'  />
         </div>
       </div>
     </section>

@@ -1,4 +1,7 @@
 ---
+import Image from 'astro/components/Image.astro';
+import Logo from '../assets/logo-beige.webp';
+
 interface Props {
   title: string;
 }
@@ -34,7 +37,7 @@ const { title } = Astro.props;
     <slot />
     <footer class="footer bg-primary text-neutral-content p-10" style='scroll-snap-align: center;'>
       <aside>
-        <img src='/logo-beige.webp' alt='Bang! Pub and Games' class='w-20' />
+        <Image src={Logo} width='60' height='30' alt='Logo da Bang! Pub and Games' />
         <p class='text-base-100'>
           Bang! Pub and Games LTDA
         </p>
