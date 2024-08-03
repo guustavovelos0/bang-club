@@ -20,7 +20,7 @@ export default function Pricing() {
                     <span className='font-semibold'>Anual</span>
                 </div>
             </div>
-            <div className={`grid grid-cols-1 gap-5 sm:grid-cols-${pricing.length}`}>
+            <div className={`grid grid-cols-1 gap-5 sm:grid-cols-3`}>
                 {pricing.map((props, i) => {
                     return <PricingItem key={i} yearlyMode={yearlyMode} {...props} />
                 })}
