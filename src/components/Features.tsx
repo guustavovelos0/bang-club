@@ -6,37 +6,37 @@ export default function Features() {
         {
             title: 'Jogar à vontade',
             description: 'Venha jogar o mês todo sem se preocupar com o tempo',
-            img: '/select-game.jpg', 
+            img: '/select-game.webp', 
         },
         {
             title: 'Sorteios exclusivos',
             description: 'Participe de sorteios exclusivos para membros',
-            img: '/prize.jpg', 
+            img: '/prize.webp', 
         },
         {
             title: 'Créditos para alugar jogos',
             description: 'Ganhe créditos para alugar jogos todos os meses',
-            img: '/playing-home.jpg', 
+            img: '/playing-home.webp', 
         },
         {
             title: 'Decidir os próximos jogos',
             description: 'Ajude a decidir quais serão os próximos jogos comprados para nosso acervo',
-            img: '/choose-bg.jpg', 
+            img: '/choose-bg.webp', 
         },
         {
             title: 'Convidar amigos',
             description: 'Convide amigos para jogar de graça a primeira vez',
-            img: '/invite-friends.jpg', 
+            img: '/invite-friends.webp', 
         },
         {
             title: 'Preços exclusivos',
             description: 'Tenha preços exclusivos em toda nossa lojinha e menu',
-            img: '/buying.jpg', 
+            img: '/buying.webp', 
         },
         {
             title: 'Compra antecipada',
             description: 'Compre antecipadamente em todos os nossos eventos especiais',
-            img: '/playing-home.jpg', 
+            img: '/playing-home.webp', 
         },
     ];
 
