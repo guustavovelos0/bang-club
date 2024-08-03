@@ -1,0 +1,16 @@
+---
+interface Props {
+    sectionName: string;
+    title: string;
+    subtitle: string;
+    darkMode?: boolean;
+}
+
+const { sectionName, title, subtitle, darkMode = false } = Astro.props;
+
+---
+<div class='text-center m-auto mb-8 w-fit'>
+    <span class={`font-semibold ${darkMode ? 'text-base-100' : 'text-primary'}`}>{sectionName}</span>
+    <h2 class={`animate__animated animate__fadeInUp mt-0 mb-2 text-4xl font-[Alegreya] ${darkMode ? 'text-base-100' : 'text-secondary'}`}>{title}</h2>
+    <span class={`font-light w-9/12 block m-auto ${darkMode ? 'text-base-100' : 'text-base-900'}`}>{subtitle}</span>
+</div>

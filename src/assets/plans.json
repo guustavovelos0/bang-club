@@ -1,0 +1,84 @@
+[
+    { 
+        "tierName": "🥈 Prata",
+        "description": "Para vaqueiros interessados",
+        "prices": [
+            {
+                "isYearly": true,
+                "from": "55",
+                "to": "45",
+                "period": "por mês",
+                "rule": "no plano anual"
+            },
+            {
+                "isYearly": false,
+                "to": "55",
+                "period": "por mês"
+            }
+        ],
+        "features": [
+            "R$25 em crédito para aluguel",
+            "Jogar à vontade 4x/mês",
+            "Ofertas Exclusivas",
+            "Compras antecipadas para eventos",
+            "Convidar amigos para jogar a primeira vez de graça",
+            "Indicação premiada"
+        ],
+        "buttonText": "Quero ser Prata!",
+        "prefered": false
+    },
+    {
+        "tierName": "🥇 Ouro",
+        "description": "Para vaqueiros ambiciosos",
+        "prices": [
+            {
+                "isYearly": true,
+                "from": "60",
+                "to": "48",
+                "period": "por mês",
+                "rule": "no plano anual"
+            },
+            {
+                "isYearly": false,
+                "to": "60",
+                "period": "por mês"
+            }
+        ],
+        "features": [
+            "R$45 em crédito para aluguel",
+            "Jogar à vontade o mês inteiro",
+            "Ofertas Exclusivas",
+            "Compras antecipadas para eventos",
+            "Convidar amigos para jogar a primeira vez de graça",
+            "Indicação premiada",
+            "Sorteios exclusivos"
+        ],
+        "buttonText": "Quero ser Ouro!",
+        "prefered": true
+    },
+    {
+        "tierName": "🥉 Bronze",
+        "description": "Para vaqueiros aprendizes",
+        "prices": [
+            {
+                "isYearly": true,
+                "from": "50",
+                "to": "40",
+                "period": "por mês",
+                "rule": "no plano anual"
+            },
+            {
+                "isYearly": false,
+                "to": "50",
+                "period": "por mês"
+            }
+        ],
+        "features": [
+            "R$20 em crédito para aluguel",
+            "Jogar à vontade 3x/mês",
+            "Ofertas Exclusivas"
+        ],
+        "buttonText": "Quero ser Bronze!",
+        "prefered": false
+    }
+]

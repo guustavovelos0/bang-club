@@ -1,28 +1,100 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Countdown from '@components/Countdown';
+import Pricing from '@components/Pricing';
+import SectionHeading from '@components/SectionHeading.astro';
+import Features from '@components/Features';
+
+const endDate = new Date('2024-08-08T23:59:59');
 ---
 
-<Layout title='Welcome to Astro.'>
-  <main class='prose mx-auto mt-16'>
-    <h1>Hello World</h1>
-    <h2>About this template</h2>
-    <p>This is a simple starter setup utilizing:</p>
-    <ul>
-      <li><a href='https://daisyui.com'>Daisy UI</a></li>
-      <li><a href='https://daisyui.com'>Tailwind CSS</a></li>
-    </ul>
-    <p>This template is fully <code>typesafe</code>.</p>
-    <h2>Path Aliases:</h2>
-    <li>
-      <code>@components/*</code> path alias goes to <code
-        >./src/components/*</code
+<style>
+  section {
+    scroll-snap-align: center;
+    padding: 2rem;
+    min-height: 100vh;
+  }
+  .ball {
+    width: 230px;
+    height: 230px;
+    background: oklch(var(--p));
+    border-radius: 50%;
+    position: absolute;
+    z-index: -2;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  .hero-img {
+    margin: 2rem auto 0;
+  }
+</style>
+<Layout title='Clube Bang'>
+  <main class='prose max-w-max'>
+    <section
+      class='hero min-h-screen mx-auto'
       >
-    </li>
-    <li>
-      <code>@assets/*</code> path alias goes to <code>./src/assets/*</code>
-    </li>
-    <li>
-      <code>@layouts/*</code> path alias goes to <code>./src/layouts/*</code>
-    </li>
+      <div class="hero-content text-center sm:text-left flex-col sm:flex-row animate__animated animate__fadeIn animate__slow">
+        <div class='sm:w-5/12'>
+          <h1 class='text-5xl font-[Alegreya]'>Faça parte do <span class='text-primary'><br>Bang Club</span></h1>
+          <p class='font-light'>Seja membro e aproveite vantagens incríveis e descontos exclusivos no Bang</p>
+          <button class="btn btn-primary shadow-xl text-white">Tornar-se um membro</button>
+        </div>
+        <div class='relative sm:w-4/12 max-sm:w-full'>
+          <div class='ball '></div>
+          <img class=' w-36 hero-img ' src='/hero-3.png' alt='Clube Bang'  />
+        </div>
+      </div>
+    </section>
+    <section class='mx-auto bg-primary'>
+      <SectionHeading 
+        sectionName="Bang Club"
+        title="A carteirinha de vaqueiro mais vantajosa do Oeste"
+        subtitle="Faça parte do nosso clube e ganhe diversos benefícios e desconto!"
+        darkMode={true}/>
+    <Features client:only='react' />
+    </section>
+    <section class='mx-auto'>
+      <SectionHeading 
+        sectionName="Planos"
+        title="Planos para todo tipo de vaqueiro"
+        subtitle="Escolha aquele que cabe melhor na sua rotina e bolso e venha fazer do seu hobby uma comunidade!" />
+      <Pricing client:only='react'/>
+    </section>
+    <section class='mx-auto bg-secondary text-white flex flex-col align-center'>
+      <div class='m-auto'>
+        <SectionHeading 
+          sectionName="Membro Fundador"
+          title="Ganhe ainda mais assinando agora"
+          subtitle="Assine o Plano Ouro até 8/8 e seja um membro fundador do Bang Club"
+          darkMode={true}/>
+        <div class='flex flex-col align-center'>
+          <div class="stats max-sm:stats-vertical shadow rounded-box">
+            <div class="stat place-items-center">
+              <div class="stat-title">Desconto</div>
+              <div class="stat-value">50%</div>
+              <div class="stat-desc">Ao contratar seu primeiro evento in loco</div>
+            </div>
+          
+            <div class="stat place-items-center">
+              <div class="stat-title">Crédito</div>
+              <div class="stat-value text-secondary">+R$200</div>
+              <div class="stat-desc text-secondary">Para alugar ainda mais jogos</div>
+            </div>
+          
+            <div class="stat place-items-center">
+              <div class="stat-title">Seu nome no mural dos</div>
+              <div class="stat-value">Herois do Oeste</div>
+              <div class="stat-desc">E nossa eterna gratidão</div>
+            </div>
+          </div>
+        </div>
+        <Countdown client:only='react' endDate={endDate}/>
+        <button class='mt-4 btn btn-primary text-white shadow-xl w-full'>ASSINE AGORA</button>
+        </div>
+    </section>
   </main>
 </Layout>
