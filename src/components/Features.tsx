@@ -48,12 +48,12 @@ export default function Features() {
                 {features.map((feature, idx) => {
                     return (
                         <div key={idx} className="collapse rounded-box bg-base-100 gap-2">
-                            <input type="radio" name="my-accordion-1" onChange={() => setSelectedFeature({idx, ...feature})} checked={idx === selectedFeature.idx} />
-                            <div className="collapse-title text-xl font-medium text-primary">
+                            <input type="radio" id={`feature-${idx}`} name={`feature-${idx}`} onChange={() => setSelectedFeature({idx, ...feature})} checked={idx === selectedFeature.idx} />
+                            <label htmlFor={`feature-${idx}`} className="collapse-title text-xl font-medium text-secondary">
                                 {feature.title}
-                            </div>
+                            </label>    
                             <div className="collapse-content">
-                                <p className='text-primary'>{feature.description}</p>
+                                <p className='text-secondary'>{feature.description}</p>
                             </div>
                         </div>
                     );

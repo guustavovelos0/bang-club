@@ -13,11 +13,12 @@ export default function Pricing() {
                 <div className='flex items-center gap-4'>
                     <span className='font-semibold'>Mensal</span>
                     <input
+                        id="period-toggle"
                         type="checkbox"
                         className="toggle border-primary bg-primary [--tglbg:white] hover:bg-primary/[0.7]"
                         onChange={() => setYearlyMode((yearlyMode) => !yearlyMode)}
                         checked={yearlyMode} />
-                    <span className='font-semibold'>Anual</span>
+                    <label htmlFor="period-toggle" className='font-semibold'>Anual</label>
                 </div>
             </div>
             <div className={`grid grid-cols-1 gap-5 sm:grid-cols-3`}>
