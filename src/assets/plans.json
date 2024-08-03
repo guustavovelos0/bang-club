@@ -1,10 +1,11 @@
 [
     { 
-        "tierName": "🥈 Prata",
+        "tierName": "Os Pistoleiros",
         "description": "Para vaqueiros interessados",
         "prices": [
             {
                 "isYearly": true,
+                "isPix": false,
                 "from": "55",
                 "to": "45",
                 "period": "por mês",
@@ -12,8 +13,16 @@
             },
             {
                 "isYearly": false,
+                "isPix": false,
                 "to": "55",
                 "period": "por mês"
+            },
+            {
+                "isYearly": true,
+                "isPix": true,
+                "from": "540",
+                "to": "500",
+                "period": "por ano"
             }
         ],
         "features": [
@@ -24,15 +33,16 @@
             "Convidar amigos para jogar a primeira vez de graça",
             "Indicação premiada"
         ],
-        "buttonText": "Quero ser Prata!",
+        "buttonText": "Quero ser um Pistoleiro!",
         "prefered": false
     },
     {
-        "tierName": "🥇 Ouro",
+        "tierName": "As Lendas do Oeste",
         "description": "Para vaqueiros ambiciosos",
         "prices": [
             {
                 "isYearly": true,
+                "isPix": false,
                 "from": "60",
                 "to": "48",
                 "period": "por mês",
@@ -40,8 +50,16 @@
             },
             {
                 "isYearly": false,
+                "isPix": false,
                 "to": "60",
                 "period": "por mês"
+            },
+            {
+                "isYearly": true,
+                "isPix": true,
+                "from": "576",
+                "to": "530",
+                "period": "por ano"
             }
         ],
         "features": [
@@ -53,15 +71,16 @@
             "Indicação premiada",
             "Sorteios exclusivos"
         ],
-        "buttonText": "Quero ser Ouro!",
+        "buttonText": "Quero ser uma Lenda!",
         "prefered": true
     },
     {
-        "tierName": "🥉 Bronze",
+        "tierName": "Os Renegados",
         "description": "Para vaqueiros aprendizes",
         "prices": [
             {
                 "isYearly": true,
+                "isPix": false,
                 "from": "50",
                 "to": "40",
                 "period": "por mês",
@@ -69,8 +88,16 @@
             },
             {
                 "isYearly": false,
+                "isPix": false,
                 "to": "50",
                 "period": "por mês"
+            },
+            {
+                "isYearly": true,
+                "isPix": true,
+                "from": "480",
+                "to": "460",
+                "period": "por ano"
             }
         ],
         "features": [
@@ -78,7 +105,7 @@
             "Jogar à vontade 3x/mês",
             "Ofertas Exclusivas"
         ],
-        "buttonText": "Quero ser Bronze!",
+        "buttonText": "Quero ser um Renegado!",
         "prefered": false
     }
 ]

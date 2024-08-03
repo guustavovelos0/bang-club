@@ -5,6 +5,7 @@ interface Props {
     description: string;
     prices: {
         isYearly: boolean;
+        isPix: boolean;
         from?: string;
         to: string;
         period: string;
@@ -14,26 +15,31 @@ interface Props {
     buttonText: string;
     prefered?: boolean;
     yearlyMode: boolean;
+    ccMode: boolean;
+    paymentUrl: string;
 }
 
 export default function PricingItem(props: Props) {
-    const { tierName, description, prices, features, buttonText, prefered, yearlyMode } = props;
+    const { tierName, description, prices, features, buttonText, prefered, yearlyMode, ccMode, paymentUrl } = props;
 
     const [price, setPrice] = useState(prices[0]);
 
     useEffect(() => {
-        setPrice(prices.find(price => price.isYearly === yearlyMode) || prices[0]);
-    }, [yearlyMode]);
+        setPrice(prices.find(price => price.isYearly === yearlyMode && price.isPix === !ccMode) || prices[0]);
+    }, [yearlyMode, ccMode]);
+
+    const openPaymentUrl = () => {
+        const payment = (price.isYearly ? +price.to * 12 : +price.to).toFixed(2).replace('.', ',');
+        window.open(`${paymentUrl}${payment}`,'_blank')
+    }
 
     return (
         <div 
             className={`card bg-white shadow-xl rounded-box text-black h-fit ${prefered && 'card-bordered border-primary border-2'}`}
         >
-            <div className="card-body">
-                <div className='flex align-center w-100 justify-between'>
-                    <span className='font-semibold text-lg'>{tierName}</span>
-                    {prefered && <div className="badge badge-primary badge-outline">Recomendado</div>}
-                </div>
+            <div className="card-body relative">
+                {prefered && <div className="absolute -top-2.5 inset-x-0 m-auto badge badge-primary text-white">Recomendado</div>}
+                <span className='font-semibold text-lg'>{tierName}</span>
                 <span className='font-light text-sm'>{description}</span>
                 <div>
                     <div>
@@ -48,7 +54,10 @@ export default function PricingItem(props: Props) {
                         <li key={i} className='text-sm text-black/[.8]'>✅ {feature}</li>
                     ))}
                 </ul>
-                <button className={`btn btn-primary mt-auto uppercase text-white ${!prefered && 'btn-outline'}`}>{buttonText}</button>
+                <button onClick={openPaymentUrl}
+                    className={`btn btn-primary mt-auto uppercase text-white ${!prefered && 'btn-outline'}`}>
+                        {buttonText}
+                </button>
             </div>
         </div>
     )
