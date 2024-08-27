@@ -6,8 +6,11 @@ import SectionHeading from '@components/SectionHeading.astro';
 import Features from '@components/Features';
 import Image from 'astro/components/Image.astro';
 import HeroImage from '../assets/hero-3.webp';
+import Modal from '@components/Modal.astro';
+import CopyToClipboard from '@components/CopyToClipboard';
 
-const endDate = new Date('2024-08-08T23:59:59');
+const endDate = new Date('2024-08-24T23:59:59');
+const pixModal = 'pix_modal';
 ---
 
 <style>
@@ -58,21 +61,21 @@ const endDate = new Date('2024-08-08T23:59:59');
         title="A carteirinha de vaqueiro mais vantajosa do Oeste"
         subtitle="Faça parte do nosso clube e ganhe diversos benefícios e desconto!"
         darkMode={true}/>
-    <Features client:only='react' />
+      <Features client:only='react' />
     </section>
     <section class='mx-auto'>
       <SectionHeading 
         sectionName="Planos"
         title="Planos para todo tipo de vaqueiro"
         subtitle="Escolha aquele que cabe melhor na sua rotina e bolso e venha fazer do seu hobby uma comunidade!" />
-      <Pricing client:only='react'/>
+      <Pricing client:only='react' pixModal={pixModal}/>
     </section>
     <section class='mx-auto bg-secondary text-white flex flex-col align-center'>
       <div class='m-auto'>
         <SectionHeading 
           sectionName="Membro Fundador"
           title="Ganhe ainda mais assinando agora"
-          subtitle="Assine o Plano Ouro até 8/8 e seja um membro fundador do Bang Club"
+          subtitle="Assine o plano 'As Lendas do Oeste' até 8/8 e seja um membro fundador do Bang Club"
           darkMode={true}/>
         <div class='flex flex-col align-center'>
           <div class="stats max-sm:stats-vertical shadow rounded-box">
@@ -101,3 +104,12 @@ const endDate = new Date('2024-08-08T23:59:59');
     </section>
   </main>
 </Layout>
+<Modal dialogModal={pixModal}>
+  <h3 class="text-lg font-bold text-secondary text-center">Pagar com Pix</h3>
+  <div class="w-full p-2 pl-0 pr-0">
+    <CopyToClipboard client:only='react' textToCopy="49.169.106/0001-02">
+      <span>Copiar chave PIX</span>
+    </CopyToClipboard>
+  </div>
+  <p class="text-center">Adicione um comentário 'Clube Bang' ao realizar o pagamento</p>
+</Modal>

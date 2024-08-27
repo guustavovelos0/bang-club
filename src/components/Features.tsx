@@ -5,27 +5,27 @@ export default function Features() {
     const features = [
         {
             title: 'Jogar à vontade',
-            description: 'Venha jogar o mês todo sem se preocupar com o tempo',
+            description: 'Venha jogar o mês todo sem se preocupar em pagar o Couvert Lúdico',
             img: '/select-game.webp', 
         },
         {
             title: 'Sorteios exclusivos',
-            description: 'Participe de sorteios exclusivos para membros',
+            description: 'Participe de sorteios exclusivos para membros, como jogos, canecas, camisetas e muito mais. E quanto mais membros mais sorteios!',
             img: '/prize.webp', 
         },
         {
             title: 'Créditos para alugar jogos',
-            description: 'Ganhe créditos para alugar jogos todos os meses',
+            description: 'Ganhe vouchers para alugar jogos e jogar em casa todos os meses!',
             img: '/playing-home.webp', 
         },
         {
             title: 'Decidir os próximos jogos',
-            description: 'Ajude a decidir quais serão os próximos jogos comprados para nosso acervo',
+            description: 'Ajude a decidir quais serão os próximos jogos comprados para nosso acervo com nossas enquetes exclusivas',
             img: '/choose-bg.webp', 
         },
         {
             title: 'Convidar amigos',
-            description: 'Convide amigos para jogar de graça a primeira vez',
+            description: 'Convide quantos amigos quiser para jogar com você e eles jogarão de GRAÇA na primeira visita',
             img: '/invite-friends.webp', 
         },
         {

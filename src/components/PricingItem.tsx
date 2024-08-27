@@ -17,10 +17,11 @@ interface Props {
     yearlyMode: boolean;
     ccMode: boolean;
     paymentUrl: string;
+    pixModal: string;
 }
 
 export default function PricingItem(props: Props) {
-    const { tierName, description, prices, features, buttonText, prefered, yearlyMode, ccMode, paymentUrl } = props;
+    const { tierName, description, prices, features, buttonText, prefered, yearlyMode, ccMode, paymentUrl, pixModal } = props;
 
     const [price, setPrice] = useState(prices[0]);
 
@@ -29,8 +30,13 @@ export default function PricingItem(props: Props) {
     }, [yearlyMode, ccMode]);
 
     const openPaymentUrl = () => {
-        const payment = (price.isYearly ? +price.to * 12 : +price.to).toFixed(2).replace('.', ',');
-        window.open(`${paymentUrl}${payment}`,'_blank')
+        if (price.isPix) {
+            (document.getElementById(pixModal) as HTMLDialogElement).showModal();
+        } else {
+            const multiplier = price.isYearly ? 1 : 12;
+            const payment = (price.isYearly ? +price.to * multiplier : +price.to).toFixed(2).replace('.', ',');
+            window.open(`${paymentUrl}${payment}`,'_blank');
+        }
     }
 
     return (

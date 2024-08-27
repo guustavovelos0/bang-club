@@ -2,9 +2,13 @@ import { useEffect, useState } from 'react';
 import PricingItem from './PricingItem';
 import PLANS from '../assets/plans.json';
 import TwoStateSwitch from './TwoStateSwitch';
-import { setYear } from 'date-fns';
 
-export default function Pricing() {
+interface Props {
+    pixModal: string;
+}
+
+export default function Pricing(props: Props) {
+    const { pixModal } = props;
     const pricing = PLANS;
     const paymentUrl = 'https://pay.infinitepay.io/bang_pub_and_gam/';
 
@@ -25,7 +29,7 @@ export default function Pricing() {
             </div>
             <div className={`grid grid-cols-1 gap-5 sm:grid-cols-3`}>
                 {pricing.map((props, i) => {
-                    return <PricingItem key={i} ccMode={ccMode} paymentUrl={paymentUrl} yearlyMode={yearlyMode} {...props} />
+                    return <PricingItem key={i} pixModal={pixModal} ccMode={ccMode} paymentUrl={paymentUrl} yearlyMode={yearlyMode} {...props} />
                 })}
             </div>
         </section>
